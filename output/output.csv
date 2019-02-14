@@ -1,8 +1,49 @@
-id_store,address,variable1,category,variable2,ratio
-28,"The Cornerhouse, 12 Trinity Square",19,B,37,0.5135135135135135
-31,36-38 Station Road,1,C,92,0.010869565217391304
-32,1 Guildhall Square,7,C,56,0.125
-34,"The Scene, Cleveland Place, 269 High Street, Walthamstow",15,C,62,0.24193548387096775
-35,45-47 Marygate Berwick-Upon-Tweed TD15 1AX,56,C,41,1.3658536585365855
-36,112-114 English Street Carlisle CA3 8ND,68,C,14,4.857142857142857
-37,36-49 Clifford Road Stanley DH9 0XG,40,C,80,0.5
+id;var1;var2;ratio;address1;address2
+1;74;88;0.8409090909090909;100 High St.;100 High Street
+2;91;42;2.1666666666666665;382-384 Brixton Rd;382-384 Brixton Road
+3;13;70;0.18571428571428572;11, little stonegate;11 Little Stonegate
+4;48;85;0.5647058823529412;corner of pittville & albion street, cheltenham;Corner of Pittville & Albion Street, Cheltenham
+5;71;70;1.0142857142857142;16 high street, unit 7, grant’s entertainment centre;16 High Street, Unit 7, Grant’s Entertainment Centre
+6;25;18;1.3888888888888888;22-24 the exchange way, chelmsford;22-24 The Exchange Way, Chelmsford
+7;12;87;0.13793103448275862;11 bridge st;11 Bridge St
+8;39;23;1.6956521739130435;81-91 john bright st;81-91 John Bright St
+9;31;2;15.5;the citrus building, 24 madeira road;The Citrus Building, 24 Madeira Road
+10;87;97;0.8969072164948454;8 broad quay;8 Broad Quay
+11;60;42;1.4285714285714286;221 – 223 cheltenham road;221 – 223 Cheltenham Road
+12;71;36;1.9722222222222223;hodgehouse, 114-116 st mary’s street;Hodgehouse, 114-116 St Mary’s Street
+13;89;3;29.666666666666668;1-5 the wardwick, cathedral quarter;1-5 The Wardwick, Cathedral Quarter
+14;31;44;0.7045454545454546;16 high street, ealing;16 High Street, Ealing
+15;13;44;0.29545454545454547;guildhall, queen st;Guildhall, Queen Street
+17;58;59;0.9830508474576272;50 kings st;50 Kings Street
+18;32;0;;11 regents court;11 Regents Court
+19;8;68;0.11764705882352941;14 the light, the headrow;14 The Light, The Headrow
+20;15;100;0.15;15 bathhouse lane,  highcross;15 Bathhouse Lane,  Highcross
+21;98;69;1.4202898550724639;59-61 hanover street;59-61 Hanover Street
+22;27;74;0.36486486486486486;produce exchange;Produce Exchange
+24;1;23;0.043478260869565216;33-35 oxford st;33-35 Oxford St
+25;53;39;1.358974358974359;5 mortimer square,  the hub;5 Mortimer Square,  The Hub
+26;85;12;7.083333333333333;117 newgate st;117 Newgate Street
+27;10;68;0.14705882352941177;8 swan lane, norwich;8 Swan Lane, Norwich
+28;19;37;0.5135135135135135;The Cornerhouse, 12 Trinity Square;The Cornerhouse, 12 Trinity Square
+29;34;68;0.5;12 Friars Entry, Magdalen St;12 Friars Entry, Magdalen Street
+30;6;1;6.0;Crystal House, Birley St;Crystal House, Birley Street
+31;1;92;0.010869565217391304;36-38 Station Road;36-38 Station Road
+32;7;56;0.125;1 Guildhall Square;1 Guildhall Square
+33;97;44;2.2045454545454546;24-26 High St;24-26 High Street
+34;15;62;0.24193548387096775;The Scene, Cleveland Place, 269 High Street, Walthamstow;The Scene, Cleveland Place, 269 High Street, Walthamstow
+35;56;41;1.3658536585365855;45-47 Marygate Berwick-Upon-Tweed TD15 1AX;45-47 Marygate Berwick-Upon-Tweed TD15 1AX
+36;68;14;4.857142857142857;112-114 English Street Carlisle CA3 8ND;112-114 English Street Carlisle CA3 8ND
+37;40;80;0.5;36-49 Clifford Road Stanley DH9 0XG;36-49 Clifford Road Stanley DH9 0XG
+38;69;27;2.5555555555555554;51-53 FRONT STREET CHESTER-LE-STREET DH3 3BH;51-53 Front Street Chester-Le-Street DH3 3BH
+39;6;37;0.16216216216216217;MIDDLETON GRANGE SHOPPING CENTRE PARK ROAD HARTLEPOOL TS24 7RZ;Middleton Grange Shopping Centre Park Road Hartlepool TS24 7RZ
+40;72;83;0.8674698795180723;50-52 NEWGATE STREET BISHOP AUCKLAND DL14 7EQ;50-52 Newgate Street Bishop Auckland DL14 7EQ
+41;55;23;2.391304347826087;12 IVISON LANE WORKINGTON CA14 3DY;12 Ivison Lane Workington CA14 3DY
+42;66;80;0.825;49 HIGH STREET REDCAR TS10 3BZ;49 High Street Redcar TS10 3BZ
+43;42;18;2.3333333333333335;64 QUEENSWAY BILLINGHAM TS23 2NP;64 Queensway Billingham TS23 2NP
+44;44;26;1.6923076923076923;CASTLEGATE SHOPPING CENTRE HIGH STREET STOCKTON-ON-TEES – TS18 1AF;Castlegate Shopping Centre High Street Stockton-On-Tees TS18 1AF
+45;98;24;4.083333333333333;CORNMILL SHOPPING CENTRE CORNMILL CENTRE DARLINGTON – DL1 1LS;Cornmill Shopping Centre Cornmill Centre Darlington DL1 1LS
+46;56;63;0.8888888888888888;26-27 BAXTERGATE WHITBY - YO21 1BW;26-27 Baxtergate Whitby YO21 1BW
+47;34;26;1.3076923076923077;167 HIGH STREET NORTHALLERTON – DL7 8JZ;167 High Street Northallerton DL7 8JZ
+48;55;83;0.6626506024096386;20-21 Brunswick Shopping Centre Scarborough - YO11 1UE;20-21 Brunswick Shopping Centre Scarborough YO11 1UE
+49;83;63;1.3174603174603174;107-109 Dalton Road Barrow-In-Furness – LA14 1HZ;107-109 Dalton Road Barrow-In-Furness LA14 1HZ
+50;97;95;1.0210526315789474;Promenades Shopping Centre 31 The Promenades Shopping Centre Bridlington – YO15 2DX;Promenades Shopping Centre 31 The Promenades Shopping Centre Bridlington YO15 2DX
