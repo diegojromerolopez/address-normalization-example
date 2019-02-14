@@ -3,7 +3,7 @@ A simple example that shows how to use address normalization techniques.
 
 ## Installing an address normalization library
 
-As this example uses [https://github.com/openvenues/pypostal](libpostal) to normalize the addresses by
+As this example uses [libpostal](https://github.com/openvenues/pypostal) to normalize the addresses by
 calling it from [pypostal](https://github.com/openvenues/pypostal) wrapping python library, 
 [follow this installation instructions](https://github.com/openvenues/pypostal#installation) before installing any Python package via pip.
 
