@@ -1,5 +1,4 @@
 id;var1;var2;ratio;address1;address2
-1;74;88;0.8409090909090909;100 High St.;100 High Street
 2;91;42;2.1666666666666665;382-384 Brixton Rd;382-384 Brixton Road
 3;13;70;0.18571428571428572;11, little stonegate;11 Little Stonegate
 4;48;85;0.5647058823529412;corner of pittville & albion street, cheltenham;Corner of Pittville & Albion Street, Cheltenham
@@ -13,8 +12,6 @@ id;var1;var2;ratio;address1;address2
 12;71;36;1.9722222222222223;hodgehouse, 114-116 st mary’s street;Hodgehouse, 114-116 St Mary’s Street
 13;89;3;29.666666666666668;1-5 the wardwick, cathedral quarter;1-5 The Wardwick, Cathedral Quarter
 14;31;44;0.7045454545454546;16 high street, ealing;16 High Street, Ealing
-15;13;44;0.29545454545454547;guildhall, queen st;Guildhall, Queen Street
-17;58;59;0.9830508474576272;50 kings st;50 Kings Street
 18;32;0;;11 regents court;11 Regents Court
 19;8;68;0.11764705882352941;14 the light, the headrow;14 The Light, The Headrow
 20;15;100;0.15;15 bathhouse lane,  highcross;15 Bathhouse Lane,  Highcross
@@ -22,14 +19,10 @@ id;var1;var2;ratio;address1;address2
 22;27;74;0.36486486486486486;produce exchange;Produce Exchange
 24;1;23;0.043478260869565216;33-35 oxford st;33-35 Oxford St
 25;53;39;1.358974358974359;5 mortimer square,  the hub;5 Mortimer Square,  The Hub
-26;85;12;7.083333333333333;117 newgate st;117 Newgate Street
 27;10;68;0.14705882352941177;8 swan lane, norwich;8 Swan Lane, Norwich
 28;19;37;0.5135135135135135;The Cornerhouse, 12 Trinity Square;The Cornerhouse, 12 Trinity Square
-29;34;68;0.5;12 Friars Entry, Magdalen St;12 Friars Entry, Magdalen Street
-30;6;1;6.0;Crystal House, Birley St;Crystal House, Birley Street
 31;1;92;0.010869565217391304;36-38 Station Road;36-38 Station Road
 32;7;56;0.125;1 Guildhall Square;1 Guildhall Square
-33;97;44;2.2045454545454546;24-26 High St;24-26 High Street
 34;15;62;0.24193548387096775;The Scene, Cleveland Place, 269 High Street, Walthamstow;The Scene, Cleveland Place, 269 High Street, Walthamstow
 35;56;41;1.3658536585365855;45-47 Marygate Berwick-Upon-Tweed TD15 1AX;45-47 Marygate Berwick-Upon-Tweed TD15 1AX
 36;68;14;4.857142857142857;112-114 English Street Carlisle CA3 8ND;112-114 English Street Carlisle CA3 8ND

@@ -5,9 +5,11 @@ from postal.expand import expand_address
 
 class BasicMerger(object):
 
-    def __init__(self, csv_file1_path, csv_file2_path):
+    def __init__(self, csv_file1_path, csv_file2_path, minimum_address_matching_ratio=0.75, unique_addresses=True):
         self.csv_file1_path = csv_file1_path
         self.csv_file2_path = csv_file2_path
+        self.minimum_address_matching_ratio = minimum_address_matching_ratio
+        self.unique_addresses = unique_addresses
 
     def merge(self, output_path, extra_csv1_fields=None, extra_csv2_fields=None):
         extra_csv1_fields = extra_csv1_fields or {}
@@ -19,8 +21,9 @@ class BasicMerger(object):
         csv3 = []
         for row1 in csv1:
             for row2 in csv2:
-                are_the_same_address = len(row1["addresses"] & row2["addresses"])
-                if are_the_same_address > 0:
+                same_addresses_count = len(row1["addresses"] & row2["addresses"])
+                address_matching_ratio = same_addresses_count / len(row1["addresses"] | row2["addresses"])
+                if address_matching_ratio >= self.minimum_address_matching_ratio:
                     # If variable 2 is zero, ratio should be infinity, so it it set to null 
                     ratio = None
                     if float(row2["variable2"]) != 0:
@@ -36,6 +39,11 @@ class BasicMerger(object):
                         row3[output_field] = row2[csv2_field]
                     
                     csv3.append(row3)
+                    
+                    # If addresses don't have more than one occurence,
+                    # when the first matching is found, end matching process for this address
+                    if self.unique_addresses:
+                        break
         
         # Output the file
         with open(output_path, 'w') as output_file:
