@@ -5,9 +5,24 @@ A simple example that shows how to use address normalization techniques.
 
 As this example uses [libpostal](https://github.com/openvenues/pypostal) to normalize the addresses by
 calling it from [pypostal](https://github.com/openvenues/pypostal) wrapping python library, 
-[follow this installation instructions](https://github.com/openvenues/pypostal#installation) before installing any Python package via pip.
+[follow this installation instructions](https://github.com/openvenues/pypostal#installation) before installing any Python package via pip:
 
-After having completed that instructions:
+```
+sudo apt-get install curl autoconf automake libtool python-dev pkg-config
+
+# Installing libpostal (See https://github.com/openvenues/pypostal#installation for more information)
+git clone https://github.com/openvenues/libpostal
+cd libpostal
+./bootstrap.sh
+./configure --datadir=[...some dir with a few GB of space...]
+make
+sudo make install
+
+# On Linux it's probably a good idea to run
+sudo ldconfig
+```
+
+After having completed that earlier libpostal installation instructions, create the virtualenv and install its requirements:
 
 ```sh
 $ virtualenv -p python3 venv
