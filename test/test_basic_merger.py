@@ -22,13 +22,13 @@ def test_read_csv():
     rows = BasicMerger.read_csv("{}/resources/basic_merger/test.csv".format(CURRENT_DIRECTORY))
     assert "Wales" == rows[0]["country"]
     assert "61 Wellfield Road Roath Cardiff" == rows[0]["address"]
-    assert 1 == len(rows[0]["addresses"])
+    assert 1 == len(rows[0]["normalized_addresses"])
     assert "England" == rows[1]["country"]
     assert "14 Tottenham Court Road London England" == rows[1]["address"]
-    assert 1 == len(rows[1]["addresses"])
+    assert 1 == len(rows[1]["normalized_addresses"])
     assert "England" == rows[2]["country"]
     assert "91 Western Rd. Brighton East Sussex England" == rows[2]["address"]
-    assert 1 == len(rows[2]["addresses"])
+    assert 1 == len(rows[2]["normalized_addresses"])
 
 
 def test_merge_no_extra_fields():
