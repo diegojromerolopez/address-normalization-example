@@ -97,7 +97,7 @@ class AddressCsvMerger(object):
         os.remove(expanded_csv_file1_path)
 
         elapsed_time = time.time() - start_time
-        csv1_address_count = file1_df.shape[0]
+        csv1_address_count = file1_df[["id_store"]].drop_duplicates().shape[0]
         merged_address_percentage = 100.0 * csv_output_file_row_count / csv1_address_count
         logging.info(f"Merge of addresses {csv_output_file_row_count} of {csv1_address_count} ({merged_address_percentage} %) completed in {output_path} in {elapsed_time} seconds")
 
