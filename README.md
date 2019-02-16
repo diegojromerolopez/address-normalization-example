@@ -17,8 +17,15 @@ $ ./venv/bin/activate
 
 ## Running the example
 
-### In-memory approach
+### Bad in-memory approach
 
 ```python3
 python3 basic_merger.py data/exercise_part1.csv data/exercise_part2.csv output/output.csv
 ```
+
+### Pandas & file-based approach
+
+```python3
+python3 address_csv_merger.py data/exercise_part1.csv data/exercise_part2.csv output/output.csv
+```
+
