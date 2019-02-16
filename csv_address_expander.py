@@ -19,6 +19,7 @@ class CsvAddressExpander(object):
     @staticmethod
     def expand_row(row, other_fields):
         """
+        Expand a row
         """
         expanded_addresses = expand_address(row["address"])
         expanded_rows = []
