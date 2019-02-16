@@ -23,7 +23,7 @@ class ExpansionBasedMerger(object):
 
         merged_df = pd.merge(file1_df, file2_df, how='inner', on='normalized_address')
 
-        output_df = merged_df#[['id_store', 'variable1','variable2']]
+        output_df = merged_df[['id_store', 'variable1','variable2']]
         output_df["ratio"] = output_df["variable1"] / output_df["variable2"]
         output_df.rename(index=str, columns={"variable1": "var1", "variable2": "var2"})
 
