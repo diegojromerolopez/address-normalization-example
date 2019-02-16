@@ -79,7 +79,7 @@ class BasicMerger(object):
                 row2_index += 1
             else:
                 if not row1_has_a_match:
-                    logging.error(f"Error. {row1['id_store']};'{row1['address']}' couldn't be merged. Closest address is {closest_row['address']} ({closest_score})")
+                    logging.error(f"Error. {row1['id_store']};'{row1['address']}' couldn't be merged. Closest address is {closest_row['address'] if closest_row else 'None'} ({closest_score})")
         
         # Output the resultant CSV file
         BasicMerger.write_output_csv(output_path, csv3, list(extra_csv1_fields.values()), list(extra_csv2_fields.values()))
