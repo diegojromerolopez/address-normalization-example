@@ -130,7 +130,9 @@ class BasicMerger(object):
         """
         Return a list of normalized address for the input address.
         """
-        return expand_address(address)
+        expaned_addresses = expand_address(address)
+        logging.debug(f"{address} has {len(expaned_addresses)} expanded addresses: {expaned_addresses}")
+        return expaned_addresses
 
 
 if __name__ == "__main__":
@@ -146,7 +148,7 @@ if __name__ == "__main__":
     execution_uuid = shortuuid.uuid()
     logging.basicConfig(filename='basic_merger.log', format=f'%(asctime)s %(levelname)s: [{execution_uuid}] %(message)s', level=logging.INFO)
     if debug:
-        logging.level = logging.DEBUG
+        logging.getLogger().setLevel(logging.DEBUG)
 
     merger = BasicMerger(csv1_file_path, csv2_file_path)
     
