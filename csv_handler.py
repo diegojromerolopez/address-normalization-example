@@ -8,15 +8,21 @@ class CsvHandler(object):
         """
         CSV reader
         """
-        csv_file = open(self.file_path, 'r')
-        csv_file_reader = csv.DictReader(csv_file, delimiter=';', quotechar='"')
+        self.file = open(self.file_path, 'r')
+        csv_file_reader = csv.DictReader(self.file, delimiter=';', quotechar='"')
         return csv_file_reader
     
     def write_csv(self, header: list):
         """
         CSV writer
         """
-        csv_file = open(self.file_path, 'w')
-        csv_file_writer = csv.DictWriter(csv_file, fieldnames=header, delimiter=';', quotechar='"')
+        self.file = open(self.file_path, 'w')
+        csv_file_writer = csv.DictWriter(self.file, fieldnames=header, delimiter=';', quotechar='"')
         csv_file_writer.writeheader()
         return csv_file_writer
+
+    def close(self):
+        """
+        Close file
+        """
+        self.file.close()
