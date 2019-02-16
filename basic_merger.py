@@ -36,9 +36,13 @@ class BasicMerger(object):
         
         csv3 = []
         for row1 in csv1:
+            row1_has_a_match = False
             closest_score = -1
             closest_row = None
-            for row2 in csv2:
+            row2_index = 0
+            while row2_index < len(csv2):
+                row2 = csv2[row2_index]
+
                 # Two addresses are equal when their normalized addresses match with a matching ration equals to self.minimum_address_matching_ratio
                 # Note we pass the addres set to the matcher, not the actual addresses to avoid compute the normalized addresses again and again
                 addresses_match, row2_address_score = self.addresses_match(row1["normalized_addresses"], row2["normalized_addresses"])
@@ -46,6 +50,7 @@ class BasicMerger(object):
                     closest_score = row2_address_score
                     closest_row = row2
                 
+                row1_has_a_match = row1_has_a_match or addresses_match
                 if addresses_match:
                     # If variable 2 is zero, ratio should be infinity, so it it set to null 
                     ratio = None
@@ -67,16 +72,16 @@ class BasicMerger(object):
                     # If addresses don't have more than one occurence,
                     # when the first matching is found, end matching process for this address
                     if self.unique_addresses:
+                        del csv2[row2_index]
                         break
+                    
+                row2_index += 1
             else:
-                logging.error(f"Error. {row1['id_store']};'{row1['address']}' couldn't be merged. Closest address is {closest_row['address']} ({closest_score})")
+                if not row1_has_a_match:
+                    logging.error(f"Error. {row1['id_store']};'{row1['address']}' couldn't be merged. Closest address is {closest_row['address']} ({closest_score})")
         
-        # Output the file
-        with open(output_path, 'w') as output_file:
-            csv3_fields = ["id","var1","var2","ratio"] + list(extra_csv1_fields.values()) + list(extra_csv2_fields.values())
-            csv_file_writer = csv.DictWriter(output_file, fieldnames=csv3_fields, delimiter=';', quotechar='"')
-            csv_file_writer.writeheader()
-            csv_file_writer.writerows(csv3)
+        # Output the resultant CSV file
+        BasicMerger.write_output_csv(output_path, csv3, list(extra_csv1_fields.values()), list(extra_csv2_fields.values()))
         
         elapsed_time = time.time() - start_time
         csv1_address_count = len(csv1)
@@ -104,6 +109,21 @@ class BasicMerger(object):
                 row["normalized_addresses"] = set(BasicMerger.address_expander(row["address"]))
                 rows.append(row)
         return rows
+
+    @staticmethod
+    def write_output_csv(csv_file_path: str, rows: [], extra_csv1_fields: None, extra_csv2_fields: None):
+        """
+        Write output CSV to disk.
+        """
+        extra_csv1_fields = extra_csv1_fields or []
+        extra_csv2_fields = extra_csv2_fields or []
+        with open(csv_file_path, 'w') as csv_file:
+            csv3_fields = ["id","var1","var2","ratio"] + extra_csv1_fields + extra_csv2_fields
+            csv_file_writer = csv.DictWriter(csv_file, fieldnames=csv3_fields, delimiter=';', quotechar='"')
+            csv_file_writer.writeheader()
+            csv_file_writer.writerows(rows)
+        
+
 
     @staticmethod
     def address_expander(address: str) -> list:
