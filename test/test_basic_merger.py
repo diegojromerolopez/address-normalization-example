@@ -40,7 +40,6 @@ def test_merge_no_extra_fields():
     basic_merger.merge(output_path, extra_csv1_fields=None, extra_csv2_fields=None)
 
     expected_output_path = "{}/resources/basic_merger/merge/expected_output_no_extra_fields.csv".format(CURRENT_DIRECTORY)
-
     with open(expected_output_path, "r") as expected_output_file:
         with open(output_path, "r") as output_file:
             assert expected_output_file.read(), output_file.read()  
@@ -57,7 +56,6 @@ def test_merge_with_extra_fields():
     basic_merger.merge(output_path, {"address": "address1"}, {"address": "address2"})
 
     expected_output_path = "{}/resources/basic_merger/merge/expected_output_with_extra_fields.csv".format(CURRENT_DIRECTORY)
-
     with open(expected_output_path, "r") as expected_output_file:
         with open(output_path, "r") as output_file:
             assert expected_output_file.read(), output_file.read()  
