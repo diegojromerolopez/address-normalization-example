@@ -3,6 +3,7 @@ import csv
 from postal.expand import expand_address
 import shortuuid
 import logging
+from pathlib import Path
 import time
 
 
@@ -145,8 +146,9 @@ if __name__ == "__main__":
     debug = len(sys.argv) >= 5 and sys.argv[4] == "debug"
 
     # Setup a logger
+    this_file_path = Path().absolute()
     execution_uuid = shortuuid.uuid()
-    logging.basicConfig(filename='basic_merger.log', format=f'%(asctime)s %(levelname)s: [{execution_uuid}] %(message)s', level=logging.INFO)
+    logging.basicConfig(filename=f'{this_file_path}/log/basic_merger.log', format=f'%(asctime)s %(levelname)s: [{execution_uuid}] %(message)s', level=logging.INFO)
     if debug:
         logging.getLogger().setLevel(logging.DEBUG)
 
