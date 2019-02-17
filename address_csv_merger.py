@@ -81,6 +81,7 @@ class AddressCsvMerger(object):
         for row2 in csv_file2_reader:
             normalized_addresses = expand_address(row2["address"])
             for normalized_address in normalized_addresses:
+                # Exact match
                 file1_normalized_address_selection = file1_df[file1_df.index == normalized_address]
                 file1_normalized_address_selection_match_found = file1_normalized_address_selection.shape[0] > 0
                 if file1_normalized_address_selection_match_found:
@@ -95,6 +96,8 @@ class AddressCsvMerger(object):
                     csv_output_file_row_count += 1
                     break
             else:
+                # Exact match has not delivered any results
+                # TODO: implement fuzzy matching
                 logging.error(f"Error. {row2['address']}' couldn't be found on expanded address set.")
         os.remove(expanded_csv_file1_path)
 
