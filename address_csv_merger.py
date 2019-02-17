@@ -81,7 +81,7 @@ class AddressCsvMerger(object):
         for row2 in csv_file2_reader:
             normalized_addresses = expand_address(row2["address"])
             for normalized_address in normalized_addresses:
-                # Exact match
+                # Exact match using the index (better performance)
                 file1_normalized_address_selection = file1_df[file1_df.index == normalized_address]
                 file1_normalized_address_selection_match_found = file1_normalized_address_selection.shape[0] > 0
                 if file1_normalized_address_selection_match_found:
