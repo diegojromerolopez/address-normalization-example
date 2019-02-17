@@ -52,3 +52,8 @@ Tests developed with pytest.
 ```sh
 pytest
 ```
+
+## TODOs and Roadmap
+
+Make use of [fuzzywuzzy](http://jonathansoma.com/lede/algorithms-2017/classes/fuzziness-matplotlib/fuzzing-matching-in-pandas-with-fuzzywuzzy/)
+or any other fuzzy matching tool for pandas.
