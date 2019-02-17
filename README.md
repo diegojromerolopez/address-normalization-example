@@ -54,7 +54,11 @@ pytest
 ```
 
 ## TODOs and Roadmap
-
-- Make use of [fuzzywuzzy](http://jonathansoma.com/lede/algorithms-2017/classes/fuzziness-matplotlib/fuzzing-matching-in-pandas-with-fuzzywuzzy/)
+- Use other address normalization techniques:
+  - Knowing the country would be helpful
+    - We could be using some kind of geocoding service and normalize by its coordinates.
+    - We could make a ad-hoc address normalization technique by country.
+  - Using partial or fuzzy matching:  
+    - Make use of [fuzzywuzzy](http://jonathansoma.com/lede/algorithms-2017/classes/fuzziness-matplotlib/fuzzing-matching-in-pandas-with-fuzzywuzzy/).
 or any other fuzzy matching tool for pandas.
 - Parallelize matching with multiprocessing. Take a look to [Processing large files using python](https://www.blopig.com/blog/2016/08/processing-large-files-using-python/).
