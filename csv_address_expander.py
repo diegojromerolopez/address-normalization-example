@@ -1,4 +1,3 @@
-import csv
 from csv_handler import CsvHandler
 from postal.expand import expand_address
 
@@ -7,13 +6,17 @@ class CsvAddressExpander(object):
     @staticmethod
     def expand_csv(csv_file_path, output_csv_file_path, other_fields=None):
         """
-        Expand a CSV file 
+        Expand a CSV file
         """
         other_fields = other_fields or []
         csv_file_reader = CsvHandler(csv_file_path).read_csv()
-        csv_output_file_writer = CsvHandler(output_csv_file_path).write_csv(other_fields+["normalized_address"])
+        csv_handler = CsvHandler(output_csv_file_path)
+        output_fields = other_fields+["normalized_address"]
+        csv_output_file_writer = csv_handler.write_csv(output_fields)
         for row in csv_file_reader:
-            expanded_rows = CsvAddressExpander.expand_row(row, other_fields=other_fields)
+            expanded_rows = CsvAddressExpander.expand_row(
+                row, other_fields=other_fields
+            )
             csv_output_file_writer.writerows(expanded_rows)
 
     @staticmethod
