@@ -94,6 +94,8 @@ class AddressCsvMerger(object):
                     csv_output_file_writer.writerow(output_row)
                     csv_output_file_row_count += 1
                     break
+            else:
+                logging.error(f"Error. {row2['address']}' couldn't be found on expanded address set.")
         os.remove(expanded_csv_file1_path)
 
         elapsed_time = time.time() - start_time

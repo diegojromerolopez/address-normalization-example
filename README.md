@@ -32,15 +32,23 @@ $ ./venv/bin/activate
 
 ## Running the example
 
-### Bad in-memory approach
+### Bad in-memory approach (do not use in production)
 
 ```python3
 python3 basic_merger.py data/exercise_part1.csv data/exercise_part2.csv output/output.csv
 ```
 
-### Pandas & file-based approach
+### Optimal file-based approach
 
 ```python3
 python3 address_csv_merger.py data/exercise_part1.csv data/exercise_part2.csv output/output.csv
 ```
 
+
+## Tests
+
+Tests developed with pytest.
+
+```sh
+pytest
+```
