@@ -32,7 +32,7 @@ $ ./venv/bin/activate
 
 ## Running the example
 
-### Bad in-memory approach (do not use in production)
+### Bad in-memory approach (do not use in production, kept for documenting and educational purposes)
 
 ```python3
 python3 basic_merger.py data/exercise_part1.csv data/exercise_part2.csv output/output.csv
